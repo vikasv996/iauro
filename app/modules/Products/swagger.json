@@ -1,0 +1,172 @@
+{
+  "paths": {
+    "/listProducts": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "description": "Products list",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "required": true,
+            "in": "header",
+            "description": "Authorization token",
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "page number",
+            "type": "number"
+          },
+          {
+            "name": "perPage",
+            "in": "query",
+            "description": "perPage record",
+            "type": "number"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Product list"
+          }
+        }
+      }
+    },
+    "/user/createProduct": {
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "description": "Create new product",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "required": true,
+            "in": "header",
+            "description": "Authorization token",
+            "type": "string"
+          },
+          {
+            "name": "product data",
+            "required": true,
+            "in": "body",
+            "description": "product data",
+            "schema": {
+              "$ref": "#/definitions/AddProductRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Product added successfully."
+          }
+        }
+      }
+    },
+    "/admin/updateProduct/{id}": {
+      "put": {
+        "tags": [
+          "Products"
+        ],
+        "description": "Update product",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "required": true,
+            "in": "header",
+            "description": "Authorization token",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "type": "string",
+            "description": "Product id"
+          },
+          {
+            "name": "product data",
+            "required": true,
+            "in": "body",
+            "description": "product data",
+            "schema": {
+              "$ref": "#/definitions/UpdateProductRequest"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Product updated successfully."
+          }
+        }
+      }
+    },
+    "/admin/deleteProduct/{id}": {
+      "delete": {
+        "tags": [
+          "Products"
+        ],
+        "description": "Delete product",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "required": true,
+            "in": "header",
+            "description": "Authorization token",
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "type": "string",
+            "description": "Product id"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Product deleted successfully."
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AddProductRequest": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Mobile"
+        }
+      }
+    },
+    "UpdateProductRequest": {
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Mobile"
+        },
+        "status": {
+          "type": "boolean",
+          "example": true
+        }
+      }
+    }
+  },
+  "swagger": "2.0",
+  "info": {}
+}

@@ -1,0 +1,32 @@
+{
+  "name": "iauro_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "basic-auth": "2.0.1",
+    "body-parser": "1.19.1",
+    "cors": "2.8.5",
+    "custom-env": "2.0.1",
+    "dotenv": "16.0.0",
+    "express": "4.17.1",
+    "express-validator": "^6.14.0",
+    "file-system": "2.2.2",
+    "glob": "7.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "4.17.11",
+    "moment": "^2.29.1",
+    "mongodb": "4.3.1",
+    "mongoose": "6.2.0",
+    "mongoose-delete": "0.5.4",
+    "morgan": "^1.10.0",
+    "morgan-body": "^2.6.6",
+    "swagger-ui-express": "4.3.0"
+  }
+}
