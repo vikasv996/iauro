@@ -40,7 +40,7 @@
             "in": "body",
             "description": "Params",
             "schema": {
-              "$ref": "#/definitions/Register"
+              "$ref": "#/definitions/LoginRequest"
             }
           }
         ],
@@ -135,6 +135,18 @@
         "isSuperAdmin": {
           "type": "boolean",
           "example": false
+        }
+      }
+    },
+    "LoginRequest": {
+      "properties": {
+        "emailId": {
+          "type": "string",
+          "example": "vikas@gmail.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "Test@123"
         }
       }
     },
