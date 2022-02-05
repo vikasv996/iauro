@@ -65,7 +65,8 @@ if (config.isHTTPAuthForSwagger && config.isHTTPAuthForSwagger === 'true') {
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(mainSwaggerData, options));
 
 // Listening Server
-app.listen(parseInt(config.port), async () => {
+let port = process.env.PORT || config.port;
+app.listen(parseInt(port), async () => {
     console.log('process.env.NODE_ENV', process.env.NODE_ENV);
-    console.log(`Server running at http://localhost:${config.port}`);
+    console.log(`Server running at: ${port}`);
 });
