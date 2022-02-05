@@ -131,6 +131,10 @@
         "password": {
           "type": "string",
           "example": "Test@123"
+        },
+        "isSuperAdmin": {
+          "type": "boolean",
+          "example": false
         }
       }
     },
