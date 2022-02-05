@@ -34,3 +34,6 @@ configs/access.log
 
 /public/upload
 package-lock.json
+
+.env.development
+.env.production
